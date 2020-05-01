@@ -38,6 +38,17 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
 
+    glDisableVertexAttribArray(0);
+
+    // Parametros:
+    // indice do atributo, no nosso caso é o primeiro, então indice é zero
+    // tamanho do atributo, não em bytes, mas em quantidade de dados, no nosso caso 2 por ter x e y
+    // tipo do atributo, nesse caso são floats
+    // usa normal, nesse caso não
+    // stride - seria o passo.. ou o quanto preciso andar pra chegar no próximo atributo
+    // ponteiro pro atributo, é como se fosse um offset_of pra ficar mais claro
+    glVertexAttribPointer(0, 2, GL_FLOAT, false, sizeof(float) * 2, 0);
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
