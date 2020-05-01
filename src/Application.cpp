@@ -38,7 +38,7 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
 
-    glDisableVertexAttribArray(0);
+    glEnableVertexAttribArray(0);
 
     // Parametros:
     // indice do atributo, no nosso caso é o primeiro, então indice é zero
